@@ -212,8 +212,7 @@ func (msg *Message) ClearData() {
 // Match returns true, if the OSC address pattern of the OSC Message matches the given
 // address. The match is case sensitive!
 func (msg *Message) Match(addr string) bool {
-	exp := getRegEx(msg.Address)
-	return exp.MatchString(addr)
+	return msg.Address == addr
 }
 
 // TypeTags returns the type tag string.
